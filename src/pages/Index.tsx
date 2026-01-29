@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import PresentationNav from "@/components/presentation/PresentationNav";
+import TitleSlide from "@/components/presentation/TitleSlide";
+import TeamSlide from "@/components/presentation/TeamSlide";
+import TableOfContents from "@/components/presentation/TableOfContents";
+import ProjectDescriptionSlide from "@/components/presentation/ProjectDescriptionSlide";
+import FunctionalRequirementsSlide from "@/components/presentation/FunctionalRequirementsSlide";
+import TechnologiesSlide from "@/components/presentation/TechnologiesSlide";
+import ProgressSlide from "@/components/presentation/ProgressSlide";
+import DemoSlide from "@/components/presentation/DemoSlide";
+import ConclusionSlide from "@/components/presentation/ConclusionSlide";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <PresentationNav />
+      
+      {/* Add top anchor for navigation */}
+      <div id="top" />
+      
+      <TitleSlide />
+      <TeamSlide />
+      <TableOfContents />
+      <ProjectDescriptionSlide />
+      <FunctionalRequirementsSlide />
+      <TechnologiesSlide />
+      <ProgressSlide />
+      <DemoSlide />
+      <ConclusionSlide />
     </div>
   );
 };
