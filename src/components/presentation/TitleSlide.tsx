@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import rafiqLogo from "@/assets/rafiq-logo.png";
+import { GraduationCap, User } from "lucide-react";
 
 const TitleSlide = () => {
   return (
@@ -58,7 +59,7 @@ const TitleSlide = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col gap-2"
+            className="flex flex-col gap-2 mb-8"
           >
             <p className="text-lg text-primary-foreground/90 font-medium">
               Graduation Project - Semester 1
@@ -68,13 +69,43 @@ const TitleSlide = () => {
             </p>
           </motion.div>
 
+          {/* Supervisors */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="flex flex-wrap justify-center gap-6"
+          >
+            {/* Doctor */}
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/20">
+              <div className="w-10 h-10 rounded-full bg-rafiq-gold/30 flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-rafiq-gold" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-primary-foreground/60 uppercase tracking-wider">Supervisor</p>
+                <p className="font-semibold text-primary-foreground">Dr. Asmaa Elsaid</p>
+              </div>
+            </div>
+            
+            {/* TA */}
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/20">
+              <div className="w-10 h-10 rounded-full bg-secondary/30 flex items-center justify-center">
+                <User className="w-5 h-5 text-secondary" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-primary-foreground/60 uppercase tracking-wider">T.A.</p>
+                <p className="font-semibold text-primary-foreground">Rania</p>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Scroll Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: [0, 10, 0] }}
             transition={{ 
-              opacity: { delay: 1.2, duration: 0.5 },
-              y: { delay: 1.2, duration: 1.5, repeat: Infinity }
+              opacity: { delay: 1.4, duration: 0.5 },
+              y: { delay: 1.4, duration: 1.5, repeat: Infinity }
             }}
             className="absolute bottom-12 left-1/2 -translate-x-1/2"
           >
