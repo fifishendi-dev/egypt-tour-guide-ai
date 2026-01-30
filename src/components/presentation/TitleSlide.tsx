@@ -64,7 +64,7 @@ const TitleSlide = () => {
               Graduation Project - Semester 1
             </p>
             <p className="text-primary-foreground/60 text-sm">
-              Software Engineering Department
+              Computer Science Department
             </p>
           </motion.div>
 
