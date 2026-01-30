@@ -41,12 +41,21 @@ const ProjectDescriptionSlide = () => {
               <AlertCircle className="w-6 h-6 text-destructive" />
             </div>
             <div>
-              <h3 className="text-2xl font-display font-bold text-foreground mb-4">Problem Description</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Tourists visiting Egypt face significant challenges in finding reliable, multilingual tour guides who can provide personalized experiences. 
-                The current market lacks a unified platform that verifies guide qualifications, matches tourists with guides based on language preferences, 
-                and ensures safety during tours. Additionally, there's no standardized system to assess guide expertise and language proficiency.
-              </p>
+              <h3 className="text-2xl font-display font-bold text-foreground mb-4">Problem Definition</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                  Fear of scams and safety issues prevents many tourists from visiting Egypt
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                  There is no clear way to check tour guides' language skills and behavior
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                  Qualified language graduates are not getting fair job opportunities
+                </li>
+              </ul>
             </div>
           </div>
         </motion.div>
@@ -69,19 +78,15 @@ const ProjectDescriptionSlide = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                Boost Egypt's tourism industry through technology
+                Tourism is growing, and digital tools are widely used
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                Create job opportunities for qualified guides
+                Real-time monitoring ensures safety and trust
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                Enhance tourist safety and experience
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                Apply AI/ML skills to real-world problems
+                Supports youth and economic growth
               </li>
             </ul>
           </motion.div>
@@ -97,24 +102,24 @@ const ProjectDescriptionSlide = () => {
               <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
                 <Target className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-xl font-display font-bold text-foreground">Objectives</h3>
+              <h3 className="text-xl font-display font-bold text-foreground">Solution</h3>
             </div>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                Develop an Uber-like platform for tour guides
+                Connects tourists with verified guides anytime
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                Implement AI-powered guide assessment system
+                Ensures safety, trust, and quality
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                Enable multilingual matching (99+ languages)
+                Transparent pricing
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                Integrate real-time safety monitoring
+                Provides jobs for graduates
               </li>
             </ul>
           </motion.div>
