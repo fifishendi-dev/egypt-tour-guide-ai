@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
 import { 
   AlertCircle, 
-  Lightbulb, 
-  Globe2, 
-  RefreshCw,
-  Calendar,
   CheckCircle2,
   Shield,
   Users,
   DollarSign,
-  Briefcase
+  Briefcase,
+  Globe2
 } from "lucide-react";
 import rafiqLogo from "@/assets/rafiq-logo.png";
 
@@ -69,68 +66,6 @@ const ProjectDescriptionSlide = () => {
                 </div>
                 <h3 className="text-xl font-display font-bold text-foreground mb-3">{problem.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Motivation Section */}
-      <section id="motivation" className="min-h-screen py-20 bg-gradient-to-b from-background to-muted/30 flex items-center">
-        <div className="container mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-2 bg-rafiq-gold/20 text-rafiq-gold px-4 py-2 rounded-full mb-6">
-              <Lightbulb className="w-4 h-4" />
-              <span className="text-sm font-medium uppercase tracking-wider">Why We Build</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
-              Our <span className="text-gradient-gold">Motivation</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                icon: Globe2,
-                title: "Growing Tourism",
-                description: "Tourism is growing, and digital tools are widely used",
-                gradient: "from-rafiq-gold to-rafiq-coral"
-              },
-              {
-                icon: Shield,
-                title: "Safety & Trust",
-                description: "Real-time monitoring ensures safety and trust",
-                gradient: "from-rafiq-sky to-primary"
-              },
-              {
-                icon: Users,
-                title: "Economic Growth",
-                description: "Supports youth and economic growth",
-                gradient: "from-secondary to-rafiq-gold"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative group"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity`} />
-                <div className="glass-card p-8 text-center relative">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-display font-bold text-foreground mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -250,16 +185,15 @@ const ProjectDescriptionSlide = () => {
         </div>
       </section>
 
-      {/* Similar Applications & Methodology Section */}
-      <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+      {/* Similar Applications */}
+      <section id="similar-apps" className="py-20 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-8">
-          {/* Similar Applications */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-8 mb-8 max-w-5xl mx-auto"
+            className="glass-card p-8 max-w-5xl mx-auto"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-rafiq-sky/20 flex items-center justify-center">
@@ -286,64 +220,6 @@ const ProjectDescriptionSlide = () => {
               </p>
             </div>
           </motion.div>
-
-          {/* Lifecycle & Methodology */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="glass-card p-8"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-rafiq-coral/20 flex items-center justify-center">
-                  <RefreshCw className="w-5 h-5 text-rafiq-coral" />
-                </div>
-                <h3 className="text-xl font-display font-bold text-foreground">Methodology</h3>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                We follow the <strong className="text-foreground">Agile Scrum</strong> methodology with 2-week sprints, 
-                enabling iterative development and continuous feedback integration.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Scrum", "2-Week Sprints", "Daily Standups", "Sprint Reviews"].map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-muted text-sm text-muted-foreground">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass-card p-8"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-xl font-display font-bold text-foreground">Sprints Overview</h3>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { sprint: "Sprint 1", task: "Requirements & Design", status: "✅" },
-                  { sprint: "Sprint 2", task: "Core App Development", status: "✅" },
-                  { sprint: "Sprint 3", task: "AI Integration", status: "🔄" },
-                  { sprint: "Sprint 4", task: "Testing & Deployment", status: "⏳" },
-                ].map((s) => (
-                  <div key={s.sprint} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                    <span className="font-medium text-foreground">{s.sprint}</span>
-                    <span className="text-sm text-muted-foreground">{s.task}</span>
-                    <span>{s.status}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
     </>
