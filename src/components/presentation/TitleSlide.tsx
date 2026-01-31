@@ -77,24 +77,24 @@ const TitleSlide = () => {
             className="flex flex-wrap justify-center gap-6"
           >
             {/* Doctor */}
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/20">
-              <div className="w-10 h-10 rounded-full bg-rafiq-gold/30 flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-rafiq-gold" />
+            <div className="flex items-center gap-3 bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3 border border-rafiq-gold/40">
+              <div className="w-10 h-10 rounded-full bg-rafiq-gold flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-primary" />
               </div>
               <div className="text-left">
-                <p className="text-xs text-primary-foreground/60 uppercase tracking-wider">Supervisor</p>
-                <p className="font-semibold text-primary-foreground">Dr. Asmaa Elsaid</p>
+                <p className="text-xs text-rafiq-gold uppercase tracking-wider font-medium">Supervisor</p>
+                <p className="font-semibold text-white text-lg">Dr. Asmaa Elsaid</p>
               </div>
             </div>
             
             {/* TA */}
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/20">
-              <div className="w-10 h-10 rounded-full bg-secondary/30 flex items-center justify-center">
-                <User className="w-5 h-5 text-secondary" />
+            <div className="flex items-center gap-3 bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3 border border-rafiq-gold/40">
+              <div className="w-10 h-10 rounded-full bg-rafiq-gold flex items-center justify-center">
+                <User className="w-5 h-5 text-primary" />
               </div>
               <div className="text-left">
-                <p className="text-xs text-primary-foreground/60 uppercase tracking-wider">T.A.</p>
-                <p className="font-semibold text-primary-foreground">Rania</p>
+                <p className="text-xs text-rafiq-gold uppercase tracking-wider font-medium">T.A.</p>
+                <p className="font-semibold text-white text-lg">Rania</p>
               </div>
             </div>
           </motion.div>
