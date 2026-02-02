@@ -1,50 +1,72 @@
 import { motion } from "framer-motion";
-import { TrendingUp, CheckCircle, Clock, AlertCircle, XCircle } from "lucide-react";
+import { TrendingUp, CheckCircle, Clock, AlertCircle } from "lucide-react";
 
-const milestones = [
-  { phase: "Phase 1", title: "Planning & Design", status: "completed", progress: 100 },
-  { phase: "Phase 2", title: "UI/UX Development", status: "completed", progress: 100 },
-  { phase: "Phase 3", title: "Use Cases", status: "completed", progress: 100 },
-  { phase: "Phase 4", title: "AI & ML Models", status: "in-progress", progress: 40 },
-  { phase: "Phase 5", title: "Database Implementation", status: "in-progress", progress: 30 },
-  { phase: "Phase 6", title: "Safety Features", status: "not-started", progress: 0 },
-];
-
-const completedTasks = [
-  "Project requirements documentation",
-  "UI/UX wireframes and prototypes",
-  "Database schema design (ERD)",
-  "Use Case diagrams & documentation",
-  "Mobile app basic structure",
-  "User authentication flow design",
-  "Admin dashboard layout",
-  "Guide registration flow",
-  "Tourist booking interface design",
-];
-
-const inProgressTasks = [
-  "Whisper STT integration",
-  "XLM-RoBERTa language assessment",
-  "Interview recording system",
-  "Answer validation model research",
-  "Database tables implementation",
-  "API endpoints development",
-];
-
-const notCompletedTasks = [
-  "In-vehicle camera harassment detection",
-  "YOLO/MediaPipe integration",
-  "Real-time alert system",
-  "Safety dashboard for admins",
+const progressItems = [
+  { 
+    feature: "Use Cases", 
+    progress: 100, 
+    status: "completed",
+    details: "All use case diagrams completed"
+  },
+  { 
+    feature: "UI/UX Design", 
+    progress: 90, 
+    status: "completed",
+    details: "Mobile & web designs finalized"
+  },
+  { 
+    feature: "Mobile App Development", 
+    progress: 60, 
+    status: "in-progress",
+    details: "Core features implemented"
+  },
+  { 
+    feature: "Web Platform", 
+    progress: 70, 
+    status: "in-progress",
+    details: "Admin dashboard functional"
+  },
+  { 
+    feature: "AI Model Integration", 
+    progress: 40, 
+    status: "in-progress",
+    details: "Whisper & Phi-3.5 integration"
+  },
+  { 
+    feature: "Database Implementation", 
+    progress: 35, 
+    status: "in-progress",
+    details: "Schema design, implementing tables"
+  },
+  { 
+    feature: "Harassment Detection Camera", 
+    progress: 0, 
+    status: "pending",
+    details: "Planned for next phase"
+  },
 ];
 
 const ProgressSlide = () => {
-  const overallProgress = Math.round(
-    milestones.reduce((acc, m) => acc + m.progress, 0) / milestones.length
-  );
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'completed':
+        return <CheckCircle className="w-4 h-4 text-green-500" />;
+      case 'in-progress':
+        return <Clock className="w-4 h-4 text-secondary" />;
+      default:
+        return <AlertCircle className="w-4 h-4 text-muted-foreground" />;
+    }
+  };
+
+  const getProgressColor = (progress: number) => {
+    if (progress === 100) return 'bg-green-500';
+    if (progress >= 50) return 'bg-secondary';
+    if (progress > 0) return 'bg-rafiq-gold';
+    return 'bg-muted';
+  };
 
   return (
-    <section id="progress" className="min-h-screen py-20 bg-background">
+    <section id="progress" className="min-h-screen py-16 bg-gradient-to-b from-background to-muted/30 flex items-center">
       <div className="container mx-auto px-8">
         {/* Section Header */}
         <motion.div
@@ -52,204 +74,76 @@ const ProgressSlide = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-4 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-4 py-2 rounded-full mb-4">
             <TrendingUp className="w-4 h-4" />
-            <span className="text-sm font-medium uppercase tracking-wider">Status Update</span>
+            <span className="text-sm font-medium uppercase tracking-wider">Current Status</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
             Project <span className="text-gradient-gold">Progress</span>
           </h2>
         </motion.div>
 
-        {/* Overall Progress */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="glass-card p-8 mb-8 max-w-4xl mx-auto"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-display font-bold text-foreground">Overall Progress</h3>
-            <span className="text-3xl font-bold text-secondary">{overallProgress}%</span>
-          </div>
-          <div className="h-4 rounded-full bg-muted overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: `${overallProgress}%` }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="h-full rounded-full bg-gradient-to-r from-primary via-secondary to-rafiq-gold"
-            />
-          </div>
-        </motion.div>
-
-        {/* Milestones Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card p-8 mb-8 max-w-4xl mx-auto"
-        >
-          <h3 className="text-xl font-display font-bold text-foreground mb-6">Milestones</h3>
-          <div className="grid md:grid-cols-6 gap-4">
-            {milestones.map((milestone, index) => {
-              const StatusIcon = milestone.status === "completed" 
-                ? CheckCircle 
-                : milestone.status === "in-progress" 
-                  ? Clock 
-                  : XCircle;
-              
-              const statusColors = {
-                completed: "bg-green-100 text-green-600 border-green-200",
-                "in-progress": "bg-secondary/20 text-secondary border-secondary/30",
-                "not-started": "bg-muted text-muted-foreground border-border",
-              };
-
-              return (
-                <motion.div
-                  key={milestone.phase}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  className={`p-4 rounded-xl border text-center ${statusColors[milestone.status as keyof typeof statusColors]}`}
-                >
-                  <StatusIcon className="w-6 h-6 mx-auto mb-2" />
-                  <p className="font-semibold text-sm">{milestone.phase}</p>
-                  <p className="text-xs mt-1 opacity-80">{milestone.title}</p>
-                  <p className="text-xs font-bold mt-2">{milestone.progress}%</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* Tasks Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Completed Tasks */}
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="glass-card p-6"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-green-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-display font-bold text-foreground">Completed</h3>
-                <p className="text-xs text-muted-foreground">{completedTasks.length} tasks</p>
-              </div>
-            </div>
-            <ul className="space-y-2">
-              {completedTasks.map((task, index) => (
-                <motion.li
-                  key={task}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.4 + index * 0.03 }}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
-                >
-                  <span className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-2.5 h-2.5 text-green-600" />
-                  </span>
-                  {task}
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* In Progress Tasks */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6 }}
             className="glass-card p-6"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center">
-                <Clock className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <h3 className="text-lg font-display font-bold text-foreground">In Progress</h3>
-                <p className="text-xs text-muted-foreground">{inProgressTasks.length} tasks</p>
-              </div>
-            </div>
-            <ul className="space-y-2">
-              {inProgressTasks.map((task, index) => (
-                <motion.li
-                  key={task}
+            <div className="space-y-4">
+              {progressItems.map((item, index) => (
+                <motion.div
+                  key={item.feature}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  transition={{ delay: index * 0.1 }}
+                  className="p-4 rounded-xl bg-muted/30"
                 >
-                  <span className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-2.5 h-2.5 text-secondary" />
-                  </span>
-                  {task}
-                </motion.li>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      {getStatusIcon(item.status)}
+                      <span className="font-bold text-foreground text-sm">{item.feature}</span>
+                    </div>
+                    <span className={`text-sm font-bold ${
+                      item.progress === 100 ? 'text-green-500' :
+                      item.progress > 0 ? 'text-secondary' : 'text-muted-foreground'
+                    }`}>
+                      {item.progress}%
+                    </span>
+                  </div>
+                  
+                  <div className="relative h-2 bg-muted rounded-full overflow-hidden mb-2">
+                    <motion.div
+                      className={`absolute top-0 left-0 h-full rounded-full ${getProgressColor(item.progress)}`}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${item.progress}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: index * 0.1 }}
+                    />
+                  </div>
+                  
+                  <p className="text-xs text-muted-foreground">{item.details}</p>
+                </motion.div>
               ))}
-            </ul>
-            
-            {/* Current Focus */}
-            <div className="mt-6 p-3 rounded-xl bg-secondary/10 border border-secondary/20">
-              <p className="text-xs text-secondary font-medium">
-                🎯 Current Focus: AI model integration & database implementation
-              </p>
             </div>
-          </motion.div>
 
-          {/* Not Completed Tasks */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="glass-card p-6"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center">
-                <XCircle className="w-5 h-5 text-muted-foreground" />
+            {/* Overall Progress */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="mt-6 p-4 rounded-xl bg-secondary/10 border border-secondary/20"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-foreground">Overall Project Progress</span>
+                <span className="text-xl font-bold text-secondary">~55%</span>
               </div>
-              <div>
-                <h3 className="text-lg font-display font-bold text-foreground">Not Started</h3>
-                <p className="text-xs text-muted-foreground">{notCompletedTasks.length} tasks</p>
-              </div>
-            </div>
-            <ul className="space-y-2">
-              {notCompletedTasks.map((task, index) => (
-                <motion.li
-                  key={task}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
-                >
-                  <span className="w-4 h-4 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                    <AlertCircle className="w-2.5 h-2.5 text-muted-foreground" />
-                  </span>
-                  {task}
-                </motion.li>
-              ))}
-            </ul>
-            
-            {/* Planned for Next Phase */}
-            <div className="mt-6 p-3 rounded-xl bg-rafiq-coral/10 border border-rafiq-coral/20">
-              <p className="text-xs text-rafiq-coral font-medium">
-                📅 Planned for Semester 2: Safety monitoring features
-              </p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
