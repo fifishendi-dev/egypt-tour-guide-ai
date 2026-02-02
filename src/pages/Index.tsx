@@ -7,15 +7,18 @@ import MethodologySlide from "@/components/presentation/MethodologySlide";
 import ProjectPipelineSlide from "@/components/presentation/ProjectPipelineSlide";
 import UseCaseSlide from "@/components/presentation/UseCaseSlide";
 import ERDSchemaSlide from "@/components/presentation/ERDSchemaSlide";
-import FunctionalRequirementsSlide from "@/components/presentation/FunctionalRequirementsSlide";
+import BackendSlide from "@/components/presentation/BackendSlide";
 import MobileAppSlide from "@/components/presentation/MobileAppSlide";
 import MobileUISlide from "@/components/presentation/MobileUISlide";
 import WebPlatformSlide from "@/components/presentation/WebPlatformSlide";
-import BackendSlide from "@/components/presentation/BackendSlide";
 import AISlide from "@/components/presentation/AISlide";
+import WhisperSlide from "@/components/presentation/WhisperSlide";
+import InterviewTopicsSlide from "@/components/presentation/InterviewTopicsSlide";
+import PhiModelSlide from "@/components/presentation/PhiModelSlide";
 import ProgressSlide from "@/components/presentation/ProgressSlide";
-import DemoSlide from "@/components/presentation/DemoSlide";
+import ChallengesSlide from "@/components/presentation/ChallengesSlide";
 import ConclusionSlide from "@/components/presentation/ConclusionSlide";
+import ThankYouSlide from "@/components/presentation/ThankYouSlide";
 
 const Index = () => {
   return (
@@ -38,21 +41,24 @@ const Index = () => {
       <ProjectPipelineSlide />
       <UseCaseSlide />
       <ERDSchemaSlide />
-      <FunctionalRequirementsSlide />
+      <BackendSlide />
       
       {/* 3. Technologies */}
       <MobileAppSlide />
       <MobileUISlide />
       <WebPlatformSlide />
-      <BackendSlide />
       <AISlide />
+      <WhisperSlide />
+      <InterviewTopicsSlide />
+      <PhiModelSlide />
       
       {/* 4. Progress */}
       <ProgressSlide />
       
       {/* 5. Conclusion */}
-      <DemoSlide />
+      <ChallengesSlide />
       <ConclusionSlide />
+      <ThankYouSlide />
     </div>
   );
 };

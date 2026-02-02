@@ -31,6 +31,7 @@ const sections = [
       { id: "project-pipeline", label: "Project Pipeline" },
       { id: "use-cases", label: "Use Cases" },
       { id: "erd-schema", label: "ERD & Schema" },
+      { id: "backend-tech", label: "Backend & Database" },
     ]
   },
   { 
@@ -41,8 +42,10 @@ const sections = [
       { id: "mobile-tech", label: "Mobile App" },
       { id: "mobile-ui", label: "Mobile UI Screens" },
       { id: "web-tech", label: "Web Platform" },
-      { id: "backend-tech", label: "Backend & Database" },
       { id: "ai-tech", label: "AI Pipeline" },
+      { id: "whisper", label: "Whisper STT" },
+      { id: "interview-topics", label: "Interview Topics" },
+      { id: "phi-model", label: "Phi-3.5 Model" },
     ]
   },
   { 
@@ -50,7 +53,7 @@ const sections = [
     title: "Progress", 
     icon: TrendingUp,
     items: [
-      { id: "progress", label: "Completed & In Progress" },
+      { id: "progress", label: "Current Status" },
     ]
   },
   { 
@@ -58,8 +61,9 @@ const sections = [
     title: "Conclusion", 
     icon: CheckCircle,
     items: [
-      { id: "demo", label: "Demo" },
+      { id: "challenges", label: "Challenges & Solutions" },
       { id: "conclusion", label: "Summary & Q&A" },
+      { id: "thank-you", label: "Thank You" },
     ]
   },
 ];
