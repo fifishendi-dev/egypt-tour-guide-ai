@@ -9,11 +9,67 @@ import {
   TrendingUp,
   Globe2,
   Check,
-  X,
-  AlertTriangle
+  X
 } from "lucide-react";
 import rafiqLogo from "@/assets/rafiq-logo.png";
-import comparisonTable from "@/assets/comparison-table.png";
+
+const similarApps = [
+  {
+    name: "GetYourGuide",
+    aiInterview: false,
+    languageTest: false,
+    realTimeTracking: true,
+    localGuides: true,
+    ratingSystem: true,
+    egyptFocused: false
+  },
+  {
+    name: "Viator",
+    aiInterview: false,
+    languageTest: false,
+    realTimeTracking: false,
+    localGuides: true,
+    ratingSystem: true,
+    egyptFocused: false
+  },
+  {
+    name: "ToursByLocals",
+    aiInterview: false,
+    languageTest: false,
+    realTimeTracking: false,
+    localGuides: true,
+    ratingSystem: true,
+    egyptFocused: false
+  },
+  {
+    name: "WithLocals",
+    aiInterview: false,
+    languageTest: false,
+    realTimeTracking: false,
+    localGuides: true,
+    ratingSystem: true,
+    egyptFocused: false
+  },
+  {
+    name: "RAFIQ",
+    aiInterview: true,
+    languageTest: true,
+    realTimeTracking: true,
+    localGuides: true,
+    ratingSystem: true,
+    egyptFocused: true,
+    isOurs: true
+  }
+];
+
+const features = [
+  { key: "aiInterview", label: "AI Interview" },
+  { key: "languageTest", label: "Language Test" },
+  { key: "realTimeTracking", label: "Real-Time Tracking" },
+  { key: "localGuides", label: "Local Guides" },
+  { key: "ratingSystem", label: "Rating System" },
+  { key: "egyptFocused", label: "Egypt Focused" }
+];
 
 const ProjectDescriptionSlide = () => {
   return (
@@ -263,23 +319,68 @@ const ProjectDescriptionSlide = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-6 max-w-5xl mx-auto"
+            className="glass-card p-6 max-w-5xl mx-auto overflow-x-auto"
           >
-            {/* Comparison Table Image */}
-            <div className="rounded-xl overflow-hidden mb-6">
-              <img 
-                src={comparisonTable} 
-                alt="Feature Comparison Table" 
-                className="w-full h-auto"
-              />
-            </div>
+            {/* Custom Comparison Table */}
+            <table className="w-full min-w-[600px]">
+              <thead>
+                <tr className="border-b-2 border-border">
+                  <th className="text-left py-3 px-4 font-display font-bold text-foreground">Application</th>
+                  {features.map((feature) => (
+                    <th key={feature.key} className="text-center py-3 px-2 font-semibold text-foreground text-xs">
+                      {feature.label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {similarApps.map((app, index) => (
+                  <motion.tr
+                    key={app.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className={`border-b border-border/50 ${app.isOurs ? 'bg-secondary/10' : ''}`}
+                  >
+                    <td className={`py-3 px-4 font-bold ${app.isOurs ? 'text-secondary' : 'text-foreground'}`}>
+                      {app.name}
+                      {app.isOurs && <span className="ml-2 text-xs text-rafiq-gold">★ Ours</span>}
+                    </td>
+                    {features.map((feature) => (
+                      <td key={feature.key} className="text-center py-3 px-2">
+                        {app[feature.key as keyof typeof app] ? (
+                          <div className="flex justify-center">
+                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                              <Check className="w-4 h-4 text-green-600" />
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex justify-center">
+                            <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center">
+                              <X className="w-4 h-4 text-red-500" />
+                            </div>
+                          </div>
+                        )}
+                      </td>
+                    ))}
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
 
             {/* RAFIQ Advantage */}
-            <div className="p-4 rounded-xl bg-gradient-to-r from-secondary/20 to-rafiq-gold/20 border border-secondary/30">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="mt-6 p-4 rounded-xl bg-gradient-to-r from-secondary/20 to-rafiq-gold/20 border border-secondary/30"
+            >
               <p className="text-center font-bold text-foreground">
                 ✨ RAFIQ is the only platform offering <span className="text-secondary">all features combined</span> with AI-powered verification & real-time safety monitoring
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
