@@ -65,12 +65,12 @@ const TeamSlide = () => {
               className="glass-card p-6 text-center group cursor-default"
             >
               {/* Avatar Circle */}
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-rafiq-gold flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary via-primary/80 to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
                 {member.name.split(' ').map(n => n[0]).join('')}
               </div>
               
               {/* Name */}
-              <h3 className="font-semibold text-primary group-hover:text-rafiq-gold transition-colors">
+              <h3 className="font-semibold text-primary group-hover:text-secondary transition-colors">
                 {member.name}
               </h3>
               

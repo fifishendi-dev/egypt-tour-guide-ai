@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Database, Server, Cloud, Lock, HardDrive, Code } from "lucide-react";
+import { Database, Lock, Code } from "lucide-react";
 
 const backendStack = [
   { name: ".NET Framework API", desc: "RESTful Backend", icon: Code, color: "bg-primary" },
   { name: "MySQL", desc: "Relational Database", icon: Database, color: "bg-rafiq-gold" },
   { name: "MongoDB", desc: "NoSQL Database", icon: Database, color: "bg-secondary" },
-  { name: "Cloud Storage", desc: "Media Files", icon: HardDrive, color: "bg-rafiq-sky" },
+  { name: "Cloud Storage", desc: "Media Files", icon: Database, color: "bg-rafiq-sky" },
 ];
 
 const BackendSlide = () => {
@@ -29,8 +29,8 @@ const BackendSlide = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
-          {/* Tech Stack */}
+        <div className="max-w-5xl mx-auto">
+          {/* Tech Stack Cards */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ const BackendSlide = () => {
             })}
           </motion.div>
 
-          {/* Architecture */}
+          {/* Database Purpose Explanation */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,125 +67,47 @@ const BackendSlide = () => {
             transition={{ duration: 0.6 }}
             className="glass-card p-6"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center">
-                <Server className="w-5 h-5 text-secondary" />
-              </div>
-              <h3 className="text-xl font-display font-bold text-foreground">System Architecture</h3>
-            </div>
+            <h3 className="text-lg font-display font-bold text-foreground mb-4 text-center">Database Architecture</h3>
             
-            {/* Architecture Diagram */}
-            <div className="space-y-4">
-              {/* Client Layer */}
-              <div className="flex justify-center gap-6">
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="px-6 py-3 rounded-xl bg-rafiq-sky/20 border border-rafiq-sky/30 text-center"
-                >
-                  <p className="text-sm font-bold text-foreground">📱 Mobile App</p>
-                  <p className="text-xs text-muted-foreground">Flutter</p>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                  className="px-6 py-3 rounded-xl bg-primary/20 border border-primary/30 text-center"
-                >
-                  <p className="text-sm font-bold text-foreground">💻 Web Admin</p>
-                  <p className="text-xs text-muted-foreground">React</p>
-                </motion.div>
-              </div>
-              
-              {/* Arrow */}
-              <div className="flex justify-center">
-                <motion.div
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="w-0.5 h-6 bg-gradient-to-b from-muted-foreground/50 to-transparent"
-                />
-              </div>
-              
-              {/* API Layer */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="flex justify-center"
-              >
-                <div className="px-8 py-4 rounded-xl bg-secondary/20 border border-secondary/30 text-center">
-                  <p className="text-sm font-bold text-foreground">⚡ API Gateway</p>
-                  <p className="text-xs text-muted-foreground">.NET Framework API / REST</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* MySQL */}
+              <div className="p-4 rounded-xl bg-rafiq-gold/10 border border-rafiq-gold/30">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-rafiq-gold/20 flex items-center justify-center">
+                    <Database className="w-4 h-4 text-rafiq-gold" />
+                  </div>
+                  <h4 className="font-bold text-foreground">MySQL (Relational)</h4>
                 </div>
-              </motion.div>
-              
-              {/* Arrow */}
-              <div className="flex justify-center">
-                <motion.div
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
-                  className="w-0.5 h-6 bg-gradient-to-b from-muted-foreground/50 to-transparent"
-                />
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• User accounts & authentication</li>
+                  <li>• Booking & transaction records</li>
+                  <li>• Guide profiles & ratings</li>
+                  <li>• Payment information</li>
+                </ul>
               </div>
-              
-              {/* Backend Services */}
-              <div className="flex justify-center gap-4 flex-wrap">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 }}
-                  className="px-5 py-3 rounded-lg bg-rafiq-gold/20 border border-rafiq-gold/30 text-center"
-                >
-                  <p className="text-xs font-bold text-foreground">🗄️ MySQL</p>
-                  <p className="text-[10px] text-muted-foreground">Relational Data</p>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.75 }}
-                  className="px-5 py-3 rounded-lg bg-secondary/20 border border-secondary/30 text-center"
-                >
-                  <p className="text-xs font-bold text-foreground">🍃 MongoDB</p>
-                  <p className="text-[10px] text-muted-foreground">NoSQL Data</p>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.8 }}
-                  className="px-5 py-3 rounded-lg bg-rafiq-coral/20 border border-rafiq-coral/30 text-center"
-                >
-                  <p className="text-xs font-bold text-foreground">🧠 AI Services</p>
-                  <p className="text-[10px] text-muted-foreground">ML Models</p>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.85 }}
-                  className="px-5 py-3 rounded-lg bg-green-100 border border-green-200 text-center"
-                >
-                  <p className="text-xs font-bold text-foreground">📁 Cloud Storage</p>
-                  <p className="text-[10px] text-muted-foreground">Media Files</p>
-                </motion.div>
+
+              {/* MongoDB */}
+              <div className="p-4 rounded-xl bg-secondary/10 border border-secondary/30">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center">
+                    <Database className="w-4 h-4 text-secondary" />
+                  </div>
+                  <h4 className="font-bold text-foreground">MongoDB (NoSQL)</h4>
+                </div>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• AI interview transcripts</li>
+                  <li>• Chat messages & logs</li>
+                  <li>• Flexible document storage</li>
+                  <li>• Real-time data streams</li>
+                </ul>
               </div>
             </div>
             
             {/* Security Note */}
-            <div className="mt-6 p-3 rounded-xl bg-primary/5 border border-primary/20 flex items-center gap-3">
+            <div className="mt-4 p-3 rounded-xl bg-primary/5 border border-primary/20 flex items-center gap-3">
               <Lock className="w-5 h-5 text-primary" />
               <p className="text-xs text-muted-foreground">
-                <strong className="text-foreground">Security:</strong> JWT Authentication, Encrypted connections, Role-based access
+                <strong className="text-foreground">Security:</strong> JWT Authentication, Encrypted connections, Role-based access control
               </p>
             </div>
           </motion.div>

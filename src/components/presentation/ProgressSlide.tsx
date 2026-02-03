@@ -3,10 +3,10 @@ import { TrendingUp, CheckCircle, Clock, AlertCircle } from "lucide-react";
 
 const progressItems = [
   { 
-    feature: "Use Cases", 
+    feature: "Project Analysis", 
     progress: 100, 
     status: "completed",
-    details: "All use case diagrams completed"
+    details: "Use cases, requirements, and diagrams completed"
   },
   { 
     feature: "UI/UX Design", 
@@ -16,15 +16,15 @@ const progressItems = [
   },
   { 
     feature: "Mobile App Development", 
-    progress: 60, 
+    progress: 50, 
     status: "in-progress",
-    details: "Core features implemented"
+    details: "Core features in development"
   },
   { 
     feature: "Web Platform", 
-    progress: 70, 
+    progress: 50, 
     status: "in-progress",
-    details: "Admin dashboard functional"
+    details: "Admin dashboard in development"
   },
   { 
     feature: "AI Model Integration", 
@@ -141,7 +141,7 @@ const ProgressSlide = () => {
             >
               <div className="flex items-center justify-between">
                 <span className="font-bold text-foreground">Overall Project Progress</span>
-                <span className="text-xl font-bold text-secondary">~55%</span>
+                <span className="text-xl font-bold text-secondary">~52%</span>
               </div>
             </motion.div>
           </motion.div>
