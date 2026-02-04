@@ -3,7 +3,8 @@ import TitleSlide from "@/components/presentation/TitleSlide";
 import TeamSlide from "@/components/presentation/TeamSlide";
 import TableOfContents from "@/components/presentation/TableOfContents";
 import ProjectDescriptionSlide from "@/components/presentation/ProjectDescriptionSlide";
-import MethodologySlide from "@/components/presentation/MethodologySlide";
+import AgileSlide from "@/components/presentation/AgileSlide";
+import SprintsSlide from "@/components/presentation/SprintsSlide";
 import ProjectPipelineSlide from "@/components/presentation/ProjectPipelineSlide";
 import UseCaseSlide from "@/components/presentation/UseCaseSlide";
 import ERDSchemaSlide from "@/components/presentation/ERDSchemaSlide";
@@ -37,7 +38,8 @@ const Index = () => {
       <ProjectDescriptionSlide />
       
       {/* 2. Functional Requirements */}
-      <MethodologySlide />
+      <AgileSlide />
+      <SprintsSlide />
       <ProjectPipelineSlide />
       <UseCaseSlide />
       <ERDSchemaSlide />

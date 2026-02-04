@@ -27,7 +27,8 @@ const sections = [
     title: "Functional Requirements", 
     icon: Settings,
     items: [
-      { id: "methodology", label: "Methodology & Sprints" },
+      { id: "methodology", label: "Agile Methodology" },
+      { id: "sprints", label: "Sprint Timeline" },
       { id: "project-pipeline", label: "Project Pipeline" },
       { id: "use-cases", label: "Use Cases" },
       { id: "erd-schema", label: "ERD & Schema" },
