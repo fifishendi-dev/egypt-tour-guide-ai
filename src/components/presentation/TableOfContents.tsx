@@ -64,6 +64,7 @@ const sections = [
     items: [
       { id: "challenges", label: "Challenges & Solutions" },
       { id: "conclusion", label: "Summary & Q&A" },
+      { id: "demo", label: "Application Demo" },
       { id: "thank-you", label: "Thank You" },
     ]
   },

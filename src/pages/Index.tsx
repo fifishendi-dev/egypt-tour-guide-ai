@@ -19,6 +19,7 @@ import PhiModelSlide from "@/components/presentation/PhiModelSlide";
 import ProgressSlide from "@/components/presentation/ProgressSlide";
 import ChallengesSlide from "@/components/presentation/ChallengesSlide";
 import ConclusionSlide from "@/components/presentation/ConclusionSlide";
+import DemoSlide from "@/components/presentation/DemoSlide";
 import ThankYouSlide from "@/components/presentation/ThankYouSlide";
 
 const Index = () => {
@@ -60,6 +61,7 @@ const Index = () => {
       {/* 5. Conclusion */}
       <ChallengesSlide />
       <ConclusionSlide />
+      <DemoSlide />
       <ThankYouSlide />
     </div>
   );

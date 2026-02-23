@@ -44,10 +44,11 @@ const modelComparison = [
 ];
 
 const languageResults = [
-  { language: "German", passed: 2, total: 2, percentage: 100 },
-  { language: "English", passed: 2, total: 2, percentage: 100 },
-  { language: "Spanish", passed: 1, total: 2, percentage: 50 },
-  { language: "French", passed: 1, total: 2, percentage: 50 },
+  { language: "German", passed: 6, total: 6, percentage: 100 },
+  { language: "English", passed: 6, total: 6, percentage: 100 },
+  { language: "Spanish", passed: 3, total: 6, percentage: 50 },
+  { language: "French", passed: 3, total: 6, percentage: 50 },
+  { language: "Russian", passed: 5, total: 6, percentage: 90 },
 ];
 
 const whyPhi = [
