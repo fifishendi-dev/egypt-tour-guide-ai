@@ -5,7 +5,7 @@ const topics = [
   { topic: "Egyptian History", emoji: "🏛️", color: "from-rafiq-gold to-rafiq-coral", examples: ["Pharaohs", "Ancient Kingdoms", "Historical Events"] },
   { topic: "Landmarks", emoji: "🗿", color: "from-rafiq-coral to-rafiq-sky", examples: ["Pyramids", "Temples", "Museums"] },
   { topic: "Culture & Traditions", emoji: "🎭", color: "from-rafiq-sky to-primary", examples: ["Festivals", "Customs", "Art"] },
-  { topic: "Local Cuisine", emoji: "🍽️", color: "from-primary to-secondary", examples: ["Traditional Dishes", "Restaurants", "Food Culture"] },
+  { topic: "Local Cuisine", emoji: "🍽️", color: "from-primary to-secondary", examples: ["Traditional Dishes", "Food Culture"] },
   { topic: "Tourist Safety", emoji: "🛡️", color: "from-secondary to-rafiq-gold", examples: ["Emergency Contacts", "Safe Areas", "Guidelines"] },
   { topic: "Practical Info", emoji: "ℹ️", color: "from-rafiq-gold to-primary", examples: ["Transportation", "Currency", "Weather"] },
 ];
