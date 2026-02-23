@@ -55,7 +55,7 @@ const whyPhi = [
   "Optimized for edge deployment on standard hardware",
   "3.8B parameters with 128K context window",
   "Excellent instruction-following capabilities",
-  "Low latency for real-time interview assessment",
+  "High processing speed for rapid response generation",
   "Efficient memory footprint (~4GB VRAM)",
   "Strong performance on reasoning tasks"
 ];
