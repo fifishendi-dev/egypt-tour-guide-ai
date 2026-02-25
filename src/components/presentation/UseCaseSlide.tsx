@@ -4,7 +4,7 @@ import useCaseDiagram from "@/assets/use-case-diagram-full.png";
 
 const UseCaseSlide = () => {
   return (
-    <section id="use-cases" className="min-h-screen py-16 bg-gradient-to-b from-background to-muted/30 flex items-center">
+    <section id="use-cases" className="min-h-screen py-10 bg-gradient-to-b from-background to-muted/30 flex items-center">
       <div className="container mx-auto px-8">
         {/* Section Header */}
         <motion.div
@@ -12,7 +12,7 @@ const UseCaseSlide = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center mb-4"
         >
           <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full mb-4">
             <FileText className="w-4 h-4" />
@@ -32,7 +32,7 @@ const UseCaseSlide = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
           <div className="glass-card p-4 rounded-2xl overflow-hidden">
             <img 

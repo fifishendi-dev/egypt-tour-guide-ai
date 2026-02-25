@@ -31,7 +31,7 @@ const sprints = [
 
 const SprintsSlide = () => {
   return (
-    <section id="sprints" className="min-h-screen py-16 bg-gradient-to-b from-background to-muted/30 flex items-center">
+    <section id="sprints" className="min-h-screen py-10 bg-gradient-to-b from-background to-muted/30 flex items-center">
       <div className="container mx-auto px-8">
         {/* Section Header */}
         <motion.div
@@ -39,7 +39,7 @@ const SprintsSlide = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-6"
         >
           <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-4 py-2 rounded-full mb-4">
             <Calendar className="w-4 h-4" />
@@ -56,13 +56,13 @@ const SprintsSlide = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-6"
+            className="glass-card p-4"
           >
             <div className="relative">
               {/* Vertical Line */}
               <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-rafiq-gold via-secondary to-primary" />
               
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {sprints.map((sprint, index) => (
                   <motion.div
                     key={sprint.sprint}
@@ -73,20 +73,20 @@ const SprintsSlide = () => {
                     className="flex items-start gap-4"
                   >
                     {/* Circle with checkmark */}
-                    <div className="relative z-10 w-12 h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <CheckCircle className="w-6 h-6 text-white" />
+                    <div className="relative z-10 w-9 h-9 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     
                     {/* Sprint Content */}
-                    <div className="flex-1 p-4 rounded-xl bg-muted/50 border-l-4 border-green-400">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-bold text-lg text-foreground">{sprint.sprint}</span>
+                    <div className="flex-1 p-3 rounded-xl bg-muted/50 border-l-4 border-green-400">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-bold text-sm text-foreground">{sprint.sprint}</span>
                         <span className="text-xs text-green-600 font-semibold px-3 py-1 bg-green-100 rounded-full">
                           ✓ Completed
                         </span>
                       </div>
                       <span className="text-sm text-muted-foreground">{sprint.weeks}</span>
-                      <div className="flex flex-wrap gap-2 mt-3">
+                      <div className="flex flex-wrap gap-1.5 mt-2">
                         {sprint.deliverables.map((d) => (
                           <span key={d} className="text-xs px-2 py-1 rounded-lg bg-primary/10 text-primary font-medium">
                             {d}

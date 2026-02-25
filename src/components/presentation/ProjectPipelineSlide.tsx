@@ -14,7 +14,7 @@ import {
 
 const ProjectPipelineSlide = () => {
   return (
-    <section id="project-pipeline" className="min-h-screen py-16 bg-gradient-to-b from-background to-muted/30 flex items-center">
+    <section id="project-pipeline" className="min-h-screen py-10 bg-gradient-to-b from-background to-muted/30 flex items-center">
       <div className="container mx-auto px-8">
         {/* Section Header */}
         <motion.div
@@ -22,7 +22,7 @@ const ProjectPipelineSlide = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-6"
         >
           <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full mb-4">
             <GitBranch className="w-4 h-4" />
@@ -33,17 +33,17 @@ const ProjectPipelineSlide = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Step 1: Authentication */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-4"
           >
-            <div className="glass-card p-4 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <LogIn className="w-6 h-6 text-white" />
+            <div className="glass-card p-3 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <LogIn className="w-5 h-5 text-white" />
               </div>
               <div>
                 <h3 className="font-bold text-foreground">1. User Authentication</h3>
@@ -57,9 +57,9 @@ const ProjectPipelineSlide = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-4"
           >
-            <ArrowDown className="w-6 h-6 text-muted-foreground" />
+            <ArrowDown className="w-5 h-5 text-muted-foreground" />
           </motion.div>
 
           {/* Step 2: Role Selection */}
@@ -67,11 +67,11 @@ const ProjectPipelineSlide = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-4"
           >
-            <div className="glass-card p-4 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rafiq-gold to-rafiq-coral flex items-center justify-center">
-                <Users className="w-6 h-6 text-white" />
+            <div className="glass-card p-3 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rafiq-gold to-rafiq-coral flex items-center justify-center">
+                <Users className="w-5 h-5 text-white" />
               </div>
               <div>
                 <h3 className="font-bold text-foreground">2. Role Selection</h3>
@@ -85,19 +85,19 @@ const ProjectPipelineSlide = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-4"
           >
-            <ArrowDown className="w-6 h-6 text-muted-foreground" />
+            <ArrowDown className="w-5 h-5 text-muted-foreground" />
           </motion.div>
 
           {/* Two Branches */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             {/* Tourist Flow */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-5 border-2 border-rafiq-sky/30"
+              className="glass-card p-4 border-2 border-rafiq-sky/30"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-rafiq-sky/20 flex items-center justify-center">
@@ -131,7 +131,7 @@ const ProjectPipelineSlide = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-5 border-2 border-rafiq-coral/30"
+              className="glass-card p-4 border-2 border-rafiq-coral/30"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-rafiq-coral/20 flex items-center justify-center">
