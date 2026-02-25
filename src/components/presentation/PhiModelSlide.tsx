@@ -46,9 +46,9 @@ const modelComparison = [
 const languageResults = [
   { language: "German", passed: 6, total: 6, percentage: 100 },
   { language: "English", passed: 6, total: 6, percentage: 100 },
+  { language: "Russian", passed: 5, total: 6, percentage: 90 },
   { language: "Spanish", passed: 3, total: 6, percentage: 50 },
   { language: "French", passed: 3, total: 6, percentage: 50 },
-  { language: "Russian", passed: 5, total: 6, percentage: 90 },
 ];
 
 const whyPhi = [
