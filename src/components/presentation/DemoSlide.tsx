@@ -24,24 +24,45 @@ const DemoSlide = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="glass-card p-4 rounded-2xl">
-            <video
-              controls
-              className="w-full rounded-xl"
-              preload="metadata"
-            >
-              <source src="/demo-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </motion.div>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3 className="text-lg font-display font-bold text-foreground mb-3 text-center">📱 Mobile App</h3>
+            <div className="glass-card p-4 rounded-2xl">
+              <video
+                controls
+                className="w-full rounded-xl"
+                preload="metadata"
+              >
+                <source src="/demo-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <h3 className="text-lg font-display font-bold text-foreground mb-3 text-center">🌐 Web Platform</h3>
+            <div className="glass-card p-4 rounded-2xl">
+              <video
+                controls
+                className="w-full rounded-xl"
+                preload="metadata"
+              >
+                <source src="/web-demo-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
